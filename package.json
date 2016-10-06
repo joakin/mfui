@@ -1,10 +1,9 @@
 {
   "name": "mfui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mobile web components for wikimedia sites",
   "main": "index.js",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "ava": "^0.16.0",
     "hogan.js": "^3.0.2",
