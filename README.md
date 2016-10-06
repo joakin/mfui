@@ -2,6 +2,11 @@
 
 Wikimedia Mobile UI: components from wikimedia mobile sites
 
+## Usage
+
+In the `build/` folder you can find the production ready assets. `jQuery` and
+`OO` are required on the page for using the components.
+
 ## Development
 
 Node 6 & npm 3 required. Install the dependencies with
