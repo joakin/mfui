@@ -1,6 +1,6 @@
 {
   "name": "mfui",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Mobile web components for wikimedia sites",
   "main": "build/index.js",
   "dependencies": {},
