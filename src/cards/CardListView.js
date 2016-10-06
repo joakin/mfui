@@ -23,7 +23,6 @@ function CardListView( cardViews ) {
 		self.$el.append( cardView.$el );
 	} );
 }
-OO.initClass( CardListView );
 
 /**
  * @property {Object} compiled template

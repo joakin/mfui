@@ -19,7 +19,6 @@ var THUMB_WIDTH = 80,
 function CardsGateway( options ) {
 	this.api = options.api;
 }
-OO.initClass( CardsGateway );
 
 /**
  * Fetch information about articleTitles from the API

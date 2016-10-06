@@ -1,5 +1,3 @@
-global.OO = require( 'oojs' );
-
 require.extensions['.hogan'] = ( mod, file ) => {
 	const fs = require( 'fs' );
 	const Hogan = require('hogan.js');

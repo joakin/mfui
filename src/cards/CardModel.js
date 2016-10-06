@@ -1,3 +1,6 @@
+var inherits = require( 'inherits' );
+var EventEmitter = require( 'events' ).EventEmitter;
+
 /**
  * Model for an article
  * It is the single source of truth about a Card, which is a representation
@@ -5,18 +8,18 @@
  * A View can listen to this event and update the UI accordingly.
  *
  * @class mw.cards.CardModel
- * @extends OO.EventEmitter
+ * @extends EventEmitter
  * @param {Object} attributes article data, such as title, url, etc. about
  *  an article
  */
 function CardModel( attributes ) {
-	CardModel.super.apply( this, arguments );
+	EventEmitter.call( this );
 	/**
 	 * @property {Object} attributes of the model
 	 */
 	this.attributes = attributes;
 }
-OO.inheritClass( CardModel, OO.EventEmitter );
+inherits( CardModel, EventEmitter );
 
 /**
  * Set a model attribute.

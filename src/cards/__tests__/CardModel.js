@@ -1,5 +1,3 @@
-global.OO = require( 'oojs' );
-
 const test = require( 'ava' );
 const CardModel = require( '../CardModel' );
 

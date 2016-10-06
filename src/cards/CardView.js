@@ -20,7 +20,6 @@ function CardView( model ) {
 	 */
 	this.$el = $( this._render() );
 }
-OO.initClass( CardView );
 
 /**
  * @property {Object} compiled template
