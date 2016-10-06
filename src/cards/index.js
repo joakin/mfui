@@ -1,3 +1,5 @@
+require( './styles.less' );
+
 /**
  * @class mw.cards
  * @singleton

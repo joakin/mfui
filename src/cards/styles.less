@@ -1,5 +1,4 @@
-@import "mediawiki.mixins";
-@import "mediawiki.ui/variables";
+@import "../less/mediawiki.variables.less";
 
 @baseFontSize: 1em;
 @thumbWidth: 80px;
@@ -7,7 +6,7 @@
 @borderRadius: 2px;
 
 .ext-cards-card-list {
-	.flex-display();
+	display: flex;
 	flex-flow: row wrap;
 	justify-content: flex-start;
 	font-size: @baseFontSize;
@@ -113,10 +112,10 @@
 
 	.ext-cards-card-thumb {
 		background-color: @colorGray14;
-		.background-image-svg( 'noimage.svg', 'noimage.png' );
+		background-image: url( './noimage.png' );
 		background-repeat: no-repeat;
 		background-position: top center;
-		.background-size( 100%, 100% );
+		background-size: 100% 100%;
 		background-size: cover;
 		float: left;
 		height: 100%;
