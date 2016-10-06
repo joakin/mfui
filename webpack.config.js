@@ -6,7 +6,8 @@ var outputDir = 'build';
 
 module.exports = {
 	entry: {
-		cards: './src/cards/index.js'
+		index: './src/index.js',
+		cards: ['./src/cards/index.js']
 	},
 	output: {
 		// The absolute path to the output directory.

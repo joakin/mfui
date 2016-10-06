@@ -2,7 +2,7 @@
   "name": "mfui",
   "version": "1.0.1",
   "description": "Mobile web components for wikimedia sites",
-  "main": "index.js",
+  "main": "build/index.js",
   "dependencies": {},
   "devDependencies": {
     "ava": "^0.16.0",
