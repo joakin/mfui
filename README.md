@@ -1,4 +1,4 @@
-# mfui
+# mfui [![Travis](https://img.shields.io/travis/joakin/mfui.svg?maxAge=2592000)]() [![npm](https://img.shields.io/npm/v/mfui.svg?maxAge=2592000)]()
 
 Wikimedia Mobile UI: components from wikimedia mobile sites
 
