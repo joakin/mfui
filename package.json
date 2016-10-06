@@ -1,0 +1,46 @@
+{
+  "name": "mfui",
+  "version": "1.0.0",
+  "description": "Mobile web components for wikimedia sites",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "hogan.js": "^3.0.2",
+    "jquery": "^3.1.1",
+    "jsdoc": "^3.4.2",
+    "jsdom": "^9.6.0",
+    "mustache-loader": "^0.4.0",
+    "oojs": "^1.1.10",
+    "webpack": "^1.13.2"
+  },
+  "scripts": {
+    "start": "webpack -w",
+    "test": "npm run test:js",
+    "test:js": "ava",
+    "docs": "rm -rf docs/ && jsdoc -d docs src/**/*.js",
+    "build": "rm -rf build/ && NODE_ENV=production webpack -p",
+    "ci": "npm run docs && npm run build && npm test",
+    "prepublish": "npm run ci"
+  },
+  "files": [
+    "docs/",
+    "build/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joakin/mfui.git"
+  },
+  "keywords": [
+    "mobile",
+    "web",
+    "dom"
+  ],
+  "author": "Joaquin Oltra <joaquin@chimeces.com> (http://chimeces.com)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/joakin/mfui/issues"
+  },
+  "homepage": "https://github.com/joakin/mfui#readme"
+}
