@@ -1,6 +1,7 @@
 var path = require( 'path' );
 var webpack = require( 'webpack' );
 var ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
+var autoprefixer = require('autoprefixer');
 
 var PUBLIC_PATH = '/w/extensions/Cards';
 var outputDir = 'build/';
@@ -42,7 +43,7 @@ module.exports = {
 			loader: 'mustache?noShortcut'
 		}, {
 			test: /\.less$/,
-			loader: ExtractTextPlugin.extract('css!less')
+			loader: ExtractTextPlugin.extract('css!postcss!less')
 		}, {
 			test: /\.png$/,
 			loader: 'file?name=[name].[ext]?[hash]'
@@ -61,4 +62,7 @@ module.exports = {
 			},
 		})
 	],
+	postcss: function () {
+		return [autoprefixer({ browsers: '> 1%' })];
+	}
 };
