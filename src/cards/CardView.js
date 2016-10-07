@@ -4,11 +4,11 @@ require( './css.escape' );
  * Renders a card model.
  *
  * @class mw.cards.CardView
- * @param {mw.cards.CardModel} model
+ * @param {Object} model
  */
 function CardView( model ) {
 	/**
-	 * @property {mw.cards.CardModel}
+	 * @property {Object}
 	 */
 	this.model = model;
 
@@ -29,10 +29,10 @@ CardView.prototype.template = require( './card.hogan' );
  * @ignore
  */
 CardView.prototype._render = function () {
-	var attributes = $.extend( {}, this.model.attributes );
-	attributes.thumbnailUrl = CSS.escape( attributes.thumbnailUrl );
+	var model = $.extend( {}, this.model );
+	model.thumbnailUrl = CSS.escape( model.thumbnailUrl );
 
-	return this.template.render( attributes );
+	return this.template.render( model );
 };
 
 module.exports = CardView;

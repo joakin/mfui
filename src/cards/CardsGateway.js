@@ -3,7 +3,6 @@
  * @readonly
  */
 var THUMB_WIDTH = 80,
-	CardModel = require( './CardModel' ),
 	CardView = require( './CardView' ),
 	CardListView = require( './CardListView' );
 
@@ -77,7 +76,7 @@ CardsGateway.prototype.getCards = function ( articleTitles, thumbWidth ) {
 					article.extract = page.extract;
 				}
 
-				return new CardView( new CardModel( article ) );
+				return new CardView( article );
 			} );
 		}
 		result.resolve( new CardListView( cardViews ) );
