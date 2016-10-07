@@ -13,10 +13,12 @@ Node 6 & npm 3 required. Install the dependencies with
 
     npm install
 
-Start the development compiler (it watches assets and automatically recompiles)
-with
+Start the development compiler with
 
     npm start
+
+* Watches assets and automatically recompiles the examples into
+  `docs/examples/`
 
 Build the assets for production with
 

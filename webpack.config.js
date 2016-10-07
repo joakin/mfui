@@ -1,16 +1,21 @@
 var path = require( 'path' );
 var webpack = require( 'webpack' );
+var webpackMerge = require( 'webpack-merge' );
 var ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
+var HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 var autoprefixer = require('autoprefixer');
 
-var PUBLIC_PATH = '/w/extensions/Cards';
-var outputDir = 'build/';
+var isDevelopment = process.env.NODE_ENV === 'production' ? false : true;
 
-module.exports = {
-	entry: {
-		index: './src/index.js',
-		cards: ['./src/cards/index.js']
-	},
+if (isDevelopment) {
+	var PUBLIC_PATH = './';
+	var outputDir = 'docs/examples/';
+} else {
+	var PUBLIC_PATH = '/w/extensions/Cards';
+	var outputDir = 'build/';
+}
+
+var commonConfig = {
 	output: {
 		// The absolute path to the output directory.
 		path: path.resolve( __dirname, outputDir ),
@@ -18,9 +23,6 @@ module.exports = {
 		// Write each chunk (entries, here) to a file named after the entry, e.g.
 		// the "index" entry gets written to index.js.
 		filename: '[name].js',
-
-		// The public path of the output files when they're loaded by the browser.
-		publicPath: PUBLIC_PATH + '/' + outputDir,
 
 		// The name of the output files when they're viewed in WebKit's or Gecko's
 		// DevTools, for example.
@@ -66,3 +68,40 @@ module.exports = {
 		return [autoprefixer({ browsers: '> 1%' })];
 	}
 };
+
+if (isDevelopment) {
+
+	var entryPoints = {
+		cards: './src/cards/__examples__/cards.js'
+	};
+
+	module.exports = webpackMerge(commonConfig, {
+		output: {
+			publicPath: PUBLIC_PATH
+		},
+
+		// Generate entrypoints from demos adding the dev-server scripts
+		entry: entryPoints,
+
+		// Autogenerate HMTL files for the demos
+		plugins: Object.keys(entryPoints).map((key) =>
+			new HtmlWebpackPlugin({
+				title: key + ' example',
+				filename: key + '.html'
+			}))
+	});
+
+} else {
+
+	module.exports = webpackMerge(commonConfig, {
+		output: {
+			// The public path of the output files when they're loaded by the browser.
+			publicPath: PUBLIC_PATH + '/' + outputDir,
+		},
+		entry: {
+			index: './src/index.js',
+			cards: ['./src/cards/index.js']
+		},
+	});
+
+}
