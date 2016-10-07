@@ -14,17 +14,16 @@ const window = document.defaultView;
 global.jQuery = global.$ = require('jquery')(window);
 
 const test = require( 'ava' );
-const CardModel = require( '../CardModel' );
 const CardView = require( '../CardView' );
 
 test( 'it escapes the thumbnailUrl model attribute', t => {
-	const model = new CardModel( {
+	const model = {
 			title: 'One',
 			url: '/wiki/One',
 			hasThumbnail: true,
 			thumbnailUrl: 'http://foo.bar/\');display:none;"//baz.jpg',
 			isThumbnailProtrait: false,
-		} );
+		};
 	const view = new CardView( model );
 	const style = view.$el.find( '.ext-cards-card-thumb' )
 			.eq( 0 )
