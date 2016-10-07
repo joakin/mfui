@@ -1,19 +1,19 @@
 /**
  * View that renders multiple {@link mw.cards.CardView cards}
  *
- * @class mw.cards.CardListView
- * @param {mw.cards.CardView[]} cardViews
+ * @constructor
+ * @param {CardView[]} cardViews
  */
 function CardListView( cardViews ) {
 	var self = this;
 
 	/**
-	 * @property {mw.cards.CardView[]|Array}
+	 * @member {CardView[]}
 	 */
 	this.cardViews = cardViews || [];
 
 	/**
-	 * @property {jQuery}
+	 * @member {jQuery}
 	 */
 	this.$el = $( this.template.render() );
 
@@ -25,7 +25,8 @@ function CardListView( cardViews ) {
 }
 
 /**
- * @property {Object} compiled template
+ * Compiled template
+ * @member {Object}
  */
 CardListView.prototype.template = require( './cards.hogan' );
 
