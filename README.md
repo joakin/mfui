@@ -19,6 +19,15 @@ Start the development compiler with
 
 * Watches assets and automatically recompiles the examples into
   `docs/examples/`
+* Open `docs/index.html` and develop with the examples in mind
+
+Run tests, generate docs and examples, and build production assets with
+
+    npm run ci
+
+Build the examples with
+
+    npm run examples
 
 Build the assets for production with
 
