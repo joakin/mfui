@@ -1,3 +1,5 @@
-module.exports = window.mfui = {
-	cards: require('./cards')
-}
+var mfui = require( './init' );
+
+module.exports = mfui = {
+	cards: require( './cards' )
+};

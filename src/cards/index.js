@@ -1,10 +1,11 @@
+var mfui = require( '../init' );
+
 require( './styles.less' );
 
 /**
- * @class mw.cards
- * @singleton
+ * @namespace
  */
-window.mw.cards = module.exports = {
+mfui.cards = module.exports = {
 	CardView: require( './CardView' ),
 	CardListView: require( './CardListView' ),
 	CardsGateway: require( './CardsGateway' )

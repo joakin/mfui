@@ -3,30 +3,31 @@ require( './css.escape' );
 /**
  * Renders a card model.
  *
- * @class mw.cards.CardView
+ * @constructor
  * @param {Object} model
  */
 function CardView( model ) {
 	/**
-	 * @property {Object}
+	 * @member {Object}
 	 */
 	this.model = model;
 
 	/**
-	 * @property {jQuery}
+	 * @member {jQuery}
 	 */
 	this.$el = $( this._render() );
 }
 
 /**
- * @property {Object} compiled template
+ * Compiled template
+ * @member {Object}
  */
 CardView.prototype.template = require( './card.hogan' );
 
 /**
  * Renders the template using the model attributes.
  *
- * @ignore
+ * @private
  */
 CardView.prototype._render = function () {
 	var model = $.extend( {}, this.model );
